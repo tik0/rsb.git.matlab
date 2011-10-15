@@ -1,4 +1,4 @@
-function [ factory ] = addRSX()
+function [ factory ] = addRSB()
 %ADDRSX Add RSX libraries to Matlab
 %   Detailed explanation goes here
 javaaddpath /vol/cit/share/java/RSBJava-0.5.0.jar

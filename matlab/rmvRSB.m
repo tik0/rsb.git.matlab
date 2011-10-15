@@ -1,4 +1,4 @@
-function [] = rmvRSX()
+function [] = rmvRSB()
 %RMVRSX Remove RSX libraries from Java path
 %   Detailed explanation goes here
 javarmpath /Users/swrede/Workspace/RSBMatlab/dist/lib/rsb.m-0.5.0.jar
