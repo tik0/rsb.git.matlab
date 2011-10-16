@@ -1,25 +1,41 @@
 package rsb.matlab;
 
+import java.nio.ByteBuffer;
+import java.util.LinkedList;
+
+import rsb.converter.Converter;
+import rsb.converter.ConverterRepository;
 import rsb.converter.DefaultConverterRepository;
 import rsb.converter.ProtocolBufferConverter;
 
 import rst.geometry.TranslationType.Translation;
+import rst.geometry.PoseType.Pose;
+import rst.geometry.RotationType.Rotation;
 import rst.kinematics.JointAnglesType.JointAngles;
+import rst.dynamics.WrenchType.Wrench;
+import rst.vision.ImageMessageType.ImageMessage;
 
 public class ConverterRegistration {
 	
+	private static ConverterRepository<ByteBuffer> repository = DefaultConverterRepository.getDefaultConverterRepository();
+	
 	public ConverterRegistration() {
-		
 	}
 	
 	public static void register() {
-		// Instantiate generic ProtocolBufferConverter with SimpleImage exemplar
-		ProtocolBufferConverter<JointAngles> jointAngles = new ProtocolBufferConverter<JointAngles>(JointAngles.getDefaultInstance());
-		ProtocolBufferConverter<Translation> translation = new ProtocolBufferConverter<Translation>(Translation.getDefaultInstance());
+		LinkedList<Converter<ByteBuffer>> converter = new LinkedList<Converter<ByteBuffer>>();
 		
-		// register converter for SimpleImage's
-		DefaultConverterRepository.getDefaultConverterRepository().addConverter(jointAngles);		
-		DefaultConverterRepository.getDefaultConverterRepository().addConverter(translation);		
+		converter.add(new ProtocolBufferConverter<JointAngles>(JointAngles.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Translation>(Translation.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Wrench>(Wrench.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<ImageMessage>(ImageMessage.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Pose>(Pose.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Rotation>(Rotation.getDefaultInstance()));
+		
+		// register converters
+		for (Converter<ByteBuffer> protocolBufferConverter : converter) {
+			repository.addConverter(protocolBufferConverter);
+		}	
 		
 	}
 	
