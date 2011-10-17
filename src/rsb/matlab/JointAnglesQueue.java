@@ -26,7 +26,7 @@ public class JointAnglesQueue extends QueueAdapter<JointAngles> {
 	 * @return List of angles, see rst.kinematics.JointAngles
 	 * @throws InterruptedException
 	 */
-	public Object[] take() throws InterruptedException {
+	private Object[] take() throws InterruptedException {
 		return getQueue().take().getAnglesList().toArray();
 	} 
 
@@ -39,7 +39,10 @@ public class JointAnglesQueue extends QueueAdapter<JointAngles> {
 	 * @throws InterruptedException
 	 */	
 	public Object[] take(int ms) throws InterruptedException {
-		return getQueue().poll(ms, TimeUnit.MILLISECONDS).getAnglesList().toArray();
+		JointAngles result = getQueue().poll(ms, TimeUnit.MILLISECONDS);
+		if (result==null) return null;
+		// else just return the object list
+		return result.getAnglesList().toArray();
 	}
 	
 }
