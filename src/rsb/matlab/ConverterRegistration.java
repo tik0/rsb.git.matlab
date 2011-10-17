@@ -13,7 +13,7 @@ import rst.geometry.PoseType.Pose;
 import rst.geometry.RotationType.Rotation;
 import rst.kinematics.JointAnglesType.JointAngles;
 import rst.dynamics.WrenchType.Wrench;
-import rst.vision.ImageMessageType.ImageMessage;
+import rst.vision.ImageType.Image;
 
 public class ConverterRegistration {
 	
@@ -28,7 +28,7 @@ public class ConverterRegistration {
 		converter.add(new ProtocolBufferConverter<JointAngles>(JointAngles.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Translation>(Translation.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Wrench>(Wrench.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<ImageMessage>(ImageMessage.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Image>(Image.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Pose>(Pose.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Rotation>(Rotation.getDefaultInstance()));
 		
