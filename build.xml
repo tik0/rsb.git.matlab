@@ -16,10 +16,10 @@
 	<property name="test.dir" location="${build.dir}/test" />
 	<property name="examples.dir" location="${build.dir}/examples" />
 	<property name="lib.dir" location="lib" />
-	<property name="pbuf.lib" location="/usr/share/java/protobuf.jar" />
-	<property name="rst.lib" location="/usr/share/java/rst.jar" />
-	<property name="rsb.lib" location="/usr/share/java/RSBJava-0.5.0.jar" />
-	<property name="rstsandbox.lib" location="/usr/share/java/rstsandbox.jar" />
+	<property name="pbuf.lib" location="/opt/local/share/java/protobuf.jar" />
+	<property name="rst.lib" location="/vol/cit/share/java/rst.jar" />
+	<property name="rsb.lib" location="/vol/cit/share/java/RSBJava-0.5.0.jar" />
+	<property name="rstsandbox.lib" location="/vol/cit/share/java/rstsandbox.jar" />
 	<property name="install.dir" location="${env.prefix}/lib/java" />
 	<property name="dir.report.unittests.xml" location="testreports" />
 	<property name="dir.doc" location="doc" />
