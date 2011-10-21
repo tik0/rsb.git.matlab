@@ -20,7 +20,7 @@
 	<property name="rst.lib" location="/vol/cit/share/java/rst.jar" />
 	<property name="rsb.lib" location="/vol/cit/share/java/RSBJava-0.5.0.jar" />
 	<property name="rstsandbox.lib" location="/vol/cit/share/java/rstsandbox.jar" />
-	<property name="install.dir" location="${env.prefix}/lib/java" />
+	<property name="install.dir" location="${env.prefix}/share/java" />
 	<property name="dir.report.unittests.xml" location="testreports" />
 	<property name="dir.doc" location="doc" />
 	<property name="cobertura.dir" value="${lib.dir}" />
