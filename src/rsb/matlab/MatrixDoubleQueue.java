@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.*;
 
 import rsb.util.QueueAdapter;
-import rst.geometry.DoubleMatrixType.DoubleMatrix;
+import rst.math.MatrixDoubleType.MatrixDouble;
 
 /**
  * Simple queuing callback adapting generic push-style RSBJava
@@ -17,18 +17,18 @@ import rst.geometry.DoubleMatrixType.DoubleMatrix;
  * @author cemmeric
  *
  */
-public class DoubleMatrixQueue extends QueueAdapter<DoubleMatrix> {
+public class MatrixDoubleQueue extends QueueAdapter<MatrixDouble> {
 
 	/**
 	 * Delegate function to return queue objects as a list.
 	 * It blocks until a result is available. Returned objects
 	 * are removed from the underlying blocking queue.
 	 * 
-	 * @return 2-dim double array of matrix entries, see rst.geometry.DoubleMatrix
+	 * @return 2-dim double array of matrix entries, see rst.math.MatrixDouble
 	 * @throws Exception
 	 */	
 	public double[][] take(int ms) throws Exception  {
-		DoubleMatrix matrix = getQueue().poll(ms, TimeUnit.MILLISECONDS);
+		MatrixDouble matrix = getQueue().poll(ms, TimeUnit.MILLISECONDS);
 	
 		if (matrix==null) return null;
 
