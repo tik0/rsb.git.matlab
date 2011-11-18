@@ -11,7 +11,7 @@ import rsb.converter.ProtocolBufferConverter;
 import rst.geometry.TranslationType.Translation;
 import rst.geometry.PoseType.Pose;
 import rst.geometry.RotationType.Rotation;
-import rst.geometry.DoubleMatrixType.DoubleMatrix;
+import rst.math.MatrixDoubleType.MatrixDouble;
 import rst.kinematics.JointAnglesType.JointAngles;
 import rst.dynamics.WrenchType.Wrench;
 import rst.vision.ImageType.Image;
@@ -26,7 +26,7 @@ public class ConverterRegistration {
 	public static void register() {
 		LinkedList<Converter<ByteBuffer>> converter = new LinkedList<Converter<ByteBuffer>>();
 		
-		converter.add(new ProtocolBufferConverter<DoubleMatrix>(DoubleMatrix.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<MatrixDouble>(MatrixDouble.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<JointAngles>(JointAngles.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Translation>(Translation.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Wrench>(Wrench.getDefaultInstance()));
