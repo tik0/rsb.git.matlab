@@ -30,6 +30,20 @@ public class ConverterRegistration {
 	public ConverterRegistration() {
 	}
 
+	/**
+	 * Registers a converter for a protobuf type encapsulated in the outer class
+	 * with name <code>typeName</code> and the first-level message of name
+	 * <code>messageName</code>.
+	 * 
+	 * @param typeName
+	 *            full name of the protobuf generated outer class (with
+	 *            packages)
+	 * @param messageName
+	 *            name of the first-level inner class in <code>typeName</code>
+	 *            without packages
+	 * @throws Throwable
+	 *             something went wrong...
+	 */
 	public static void register(final String typeName, final String messageName)
 			throws Throwable {
 		GeneratedMessage instance = ProtobufUtils.getDefaultInstance(typeName,
