@@ -16,29 +16,40 @@ import rst.kinematics.JointAnglesType.JointAngles;
 import rst.dynamics.WrenchType.Wrench;
 import rst.vision.ImageType.Image;
 
+/**
+ * @author swrede
+ */
 public class ConverterRegistration {
-	
-	private static ConverterRepository<ByteBuffer> repository = DefaultConverterRepository.getDefaultConverterRepository();
-	
+
+	private static ConverterRepository<ByteBuffer> repository = DefaultConverterRepository
+			.getDefaultConverterRepository();
+
 	public ConverterRegistration() {
 	}
-	
+
 	public static void register() {
 		LinkedList<Converter<ByteBuffer>> converter = new LinkedList<Converter<ByteBuffer>>();
-		
-		converter.add(new ProtocolBufferConverter<MatrixDouble>(MatrixDouble.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<JointAngles>(JointAngles.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<Translation>(Translation.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<Wrench>(Wrench.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<Image>(Image.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<Pose>(Pose.getDefaultInstance()));
-		converter.add(new ProtocolBufferConverter<Rotation>(Rotation.getDefaultInstance()));
-		
+
+		converter.add(new ProtocolBufferConverter<MatrixDouble>(MatrixDouble
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<JointAngles>(JointAngles
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Translation>(Translation
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Wrench>(Wrench
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Image>(Image
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Pose>(Pose
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Rotation>(Rotation
+				.getDefaultInstance()));
+
 		// register converters
 		for (Converter<ByteBuffer> protocolBufferConverter : converter) {
 			repository.addConverter(protocolBufferConverter);
-		}	
-		
+		}
+
 	}
-	
+
 }

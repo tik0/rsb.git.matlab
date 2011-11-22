@@ -1,6 +1,3 @@
-/**
- * 
- */
 package rsb.matlab;
 
 import java.util.concurrent.TimeUnit;
@@ -14,7 +11,6 @@ import rst.vision.ImageType.Image;
  * compatible pull-style interface.
  * 
  * @author swrede
- *
  */
 public class ImageQueue extends QueueAdapter<Image> {
 

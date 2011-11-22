@@ -1,6 +1,3 @@
-/**
- * 
- */
 package rsb.matlab;
 
 import java.util.concurrent.TimeUnit;
@@ -15,7 +12,6 @@ import rst.math.MatrixDoubleType.MatrixDouble;
  * compatible pull-style interface.
  * 
  * @author cemmeric
- *
  */
 public class MatrixDoubleQueue extends QueueAdapter<MatrixDouble> {
 
