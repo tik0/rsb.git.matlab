@@ -3,6 +3,8 @@ package rsb.matlab;
 import java.nio.ByteBuffer;
 import java.util.LinkedList;
 
+import com.google.protobuf.GeneratedMessage;
+
 import rsb.converter.Converter;
 import rsb.converter.ConverterRepository;
 import rsb.converter.DefaultConverterRepository;
@@ -12,6 +14,7 @@ import rst.geometry.TranslationType.Translation;
 import rst.geometry.PoseType.Pose;
 import rst.geometry.RotationType.Rotation;
 import rst.math.MatrixDoubleType.MatrixDouble;
+import rst.math.Vec2DFloatType.Vec2DFloat;
 import rst.kinematics.JointAnglesType.JointAngles;
 import rst.dynamics.WrenchType.Wrench;
 import rst.vision.ImageType.Image;
@@ -27,6 +30,17 @@ public class ConverterRegistration {
 	public ConverterRegistration() {
 	}
 
+	public static void register(final String typeName, final String messageName)
+			throws Throwable {
+		GeneratedMessage instance = ProtobufUtils.getDefaultInstance(typeName,
+				messageName);
+		repository.addConverter(new ProtocolBufferConverter<GeneratedMessage>(
+				instance));
+	}
+
+	/**
+	 * Registers some default converters from RST...
+	 */
 	public static void register() {
 		LinkedList<Converter<ByteBuffer>> converter = new LinkedList<Converter<ByteBuffer>>();
 
@@ -43,6 +57,8 @@ public class ConverterRegistration {
 		converter.add(new ProtocolBufferConverter<Pose>(Pose
 				.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Rotation>(Rotation
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<Vec2DFloat>(Vec2DFloat
 				.getDefaultInstance()));
 
 		// register converters
