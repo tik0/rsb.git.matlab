@@ -50,6 +50,7 @@ public class ConverterRegistration {
 				messageName);
 		repository.addConverter(new ProtocolBufferConverter<GeneratedMessage>(
 				instance));
+
 	}
 
 	/**
