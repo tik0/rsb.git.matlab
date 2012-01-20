@@ -26,4 +26,8 @@ public class PoseQueue extends QueueAdapter<Pose> {
 		return getQueue().poll(ms, TimeUnit.MILLISECONDS);
 	}
 
+	public PoseQueue(final int capacity, final boolean discardOldest) {
+		super(capacity, discardOldest);
+	}
+	
 }

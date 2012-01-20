@@ -1,5 +1,6 @@
 package rsb.matlab;
 
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 
 import rsb.util.QueueAdapter;
@@ -31,4 +32,8 @@ public class ImageQueue extends QueueAdapter<Image> {
 		return result.getData().toByteArray();
 	}
 
+	public ImageQueue(final int capacity, final boolean discardOldest) {
+		super(capacity, discardOldest);
+	}
+	
 }
