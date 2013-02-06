@@ -4,9 +4,9 @@
 	<classpathentry kind="src" path="examples"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/RSBJava"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/protobuf"/>
-	<classpathentry kind="lib" path="/RST/build/java/rst.jar"/>
-	<classpathentry kind="lib" path="/RST/build/java/rstsandbox.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ProtoBuf"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/rsb-java"/>
+	<classpathentry kind="lib" path="/rst/build/java/rst-0.9.0.jar"/>
+	<classpathentry kind="lib" path="/rst/build/java/rstsandbox-0.9.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

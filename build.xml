@@ -16,10 +16,10 @@
 	<property name="test.dir" location="${build.dir}/test" />
 	<property name="examples.dir" location="${build.dir}/examples" />
 	<property name="lib.dir" location="lib" />
-	<property name="pbuf.lib" location="/opt/local/share/java/protobuf.jar" />
-	<property name="rst.lib" location="/vol/cit/share/java/rst.jar" />
-	<property name="rsb.lib" location="/vol/cit/share/java/RSBJava-0.5.0.jar" />
-	<property name="rstsandbox.lib" location="/vol/cit/share/java/rstsandbox.jar" />
+	<property name="pbuf.lib" location="/usr/local/share/java/protobuf.jar" />
+	<property name="rst.lib" location="/usr/local/share/java/rst.jar" />
+	<property name="rsb.lib" location="/usr/local/share/java/rsb-java-0.9.0.jar" />
+	<property name="rstsandbox.lib" location="/usr/local/share/java/rstsandbox.jar" />
 	<property name="install.dir" location="${env.prefix}/share/java" />
 	<property name="dir.report.unittests.xml" location="testreports" />
 	<property name="dir.doc" location="doc" />
@@ -35,6 +35,33 @@
 			</not>
 		</condition>
 	</fail>
+	
+	<!-- availability checks for external dependencies -->
+	<fail message="RSB library not found at '${rsb.lib}'. Please set rsb.lib.">
+		<condition>
+			<not>
+				<available file="${rsb.lib}" />
+			</not>
+		</condition>
+	</fail>	
+	
+	<!-- availability checks for external dependencies -->
+	<fail message="RST library not found at '${rst.lib}'. Please set rst.lib.">
+		<condition>
+			<not>
+				<available file="${rst.lib}" />
+			</not>
+		</condition>
+	</fail>		
+	
+	<!-- availability checks for external dependencies -->
+	<fail message="RST sandbox library not found at '${rstsandbox.lib}'. Please set rstsandbox.lib.">
+		<condition>
+			<not>
+				<available file="${rstsandbox.lib}" />
+			</not>
+		</condition>
+	</fail>		
 
 	<!-- set up ant-contrib -->
 	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
