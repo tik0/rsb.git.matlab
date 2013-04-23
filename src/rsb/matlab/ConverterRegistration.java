@@ -18,6 +18,8 @@ import rst.math.Vec2DFloatType.Vec2DFloat;
 import rst.kinematics.JointAnglesType.JointAngles;
 import rst.dynamics.WrenchType.Wrench;
 import rst.vision.ImageType.Image;
+import rst.geometry.PointCloud3DFloatType.PointCloud3DFloat;
+import rst.geometry.BoundingBox3DFloatSetType.BoundingBox3DFloatSet;
 
 /**
  * @author swrede
@@ -74,6 +76,10 @@ public class ConverterRegistration {
 		converter.add(new ProtocolBufferConverter<Rotation>(Rotation
 				.getDefaultInstance()));
 		converter.add(new ProtocolBufferConverter<Vec2DFloat>(Vec2DFloat
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<PointCloud3DFloat>(PointCloud3DFloat
+				.getDefaultInstance()));
+		converter.add(new ProtocolBufferConverter<BoundingBox3DFloatSet>(BoundingBox3DFloatSet
 				.getDefaultInstance()));
 
 		// register converters
