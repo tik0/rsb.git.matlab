@@ -5,7 +5,7 @@
     <!-- General project settings. -->
     <groupId>rsb</groupId>
     <artifactId>rsb-matlab</artifactId>
-    <version>0.9.0</version>
+    <version>0.9</version>
     <packaging>jar</packaging>
 
     <name>RSB Matlab</name>
@@ -28,7 +28,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pbuf.version>2.4.1</pbuf.version>
-        <rst.version>0.9.0</rst.version>
+        <rst.version>[0.9,0.10)</rst.version>
         <target.java.version>1.6</target.java.version>
     </properties>
 
@@ -180,7 +180,7 @@
         <dependency>
             <groupId>rsb</groupId>
             <artifactId>rsb</artifactId>
-            <version>0.9.0</version>
+            <version>[0.9,0.10)</version>
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
@@ -189,7 +189,7 @@
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
-            <artifactId>rstsandbox</artifactId>
+            <artifactId>rst-sandbox</artifactId>
             <version>${rst.version}</version>
         </dependency>
     </dependencies>
