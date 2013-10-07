@@ -189,7 +189,7 @@
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
-            <artifactId>rstsandbox</artifactId>
+            <artifactId>rst-sandbox</artifactId>
             <version>${rst.version}</version>
         </dependency>
     </dependencies>
