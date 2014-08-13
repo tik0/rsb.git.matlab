@@ -14,6 +14,11 @@ import rst.kinematics.JointAnglesType.JointAngles;
  */
 public class JointAnglesQueue extends QueueAdapter<JointAngles> {
 
+        public JointAnglesQueue(final int capacity, final boolean discardOldest) {
+            super(capacity, discardOldest);
+    	}
+
+
 	/**
 	 * Delegate function to return queue objects as a list. It blocks until a
 	 * result is available. Returned objects are removed from the underlying
