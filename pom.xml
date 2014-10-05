@@ -184,12 +184,12 @@
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
-            <artifactId>rst</artifactId>
-            <version>${rst.version}</version>
+            <artifactId>rst-fleximon</artifactId>
+            <version>${rst.version}<version>
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
-            <artifactId>rst-sandbox</artifactId>
+            <artifactId>rst-sandbox-fleximon</artifactId>
             <version>${rst.version}</version>
         </dependency>
     </dependencies>
