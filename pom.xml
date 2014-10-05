@@ -185,7 +185,7 @@
         <dependency>
             <groupId>rsb</groupId>
             <artifactId>rst-fleximon</artifactId>
-            <version>${rst.version}<version>
+            <version>${rst.version}</version>
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
